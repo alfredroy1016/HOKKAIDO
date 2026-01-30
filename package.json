@@ -11,5 +11,9 @@
   },
   "keywords": ["bouquet", "flowers", "ecommerce", "valentines"],
   "author": "HOKKAIDO",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@vercel/node": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
 }
