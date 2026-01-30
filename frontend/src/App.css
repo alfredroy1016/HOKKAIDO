@@ -1,0 +1,9 @@
+/* Custom animations or utilities specific to App components */
+.page-transition {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
