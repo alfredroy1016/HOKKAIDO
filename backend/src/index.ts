@@ -309,6 +309,19 @@ app.get('/api/products/:slug', (req: Request, res: Response) => {
   }
 });
 
+// Serve static files from React app (for production)
+import path from 'path';
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve static files from frontend build
+  app.use(express.static(path.join(__dirname, '../../frontend/dist')));
+  
+  // Handle React routing - return index.html for all non-API routes
+  app.get('*', (req: Request, res: Response) => {
+    res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

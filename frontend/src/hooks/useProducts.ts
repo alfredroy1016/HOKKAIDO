@@ -23,6 +23,7 @@ export function useProducts() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        // Use relative path - backend serves frontend on same domain
         const response = await axios.get('/api/products');
         setProducts(response.data);
       } catch (err) {
